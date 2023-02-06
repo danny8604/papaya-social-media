@@ -1,0 +1,15 @@
+@import "../../../index.scss";
+
+.button {
+  width: 100%;
+  padding: 1.5rem 4rem;
+  background: none;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: bisque;
+  }
+}
