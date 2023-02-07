@@ -2,8 +2,7 @@
 
 .navbar {
   padding: 1.25rem;
-  color: var(--primary);
-  background-color: var(--bg);
+  border-bottom: 1px solid var(--primary);
   svg {
     cursor: pointer;
   }

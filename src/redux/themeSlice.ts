@@ -5,7 +5,7 @@ type ThemeState = {
 };
 
 const initialState: ThemeState = {
-  theme: "light",
+  theme: "",
 };
 
 export const themeSlice = createSlice({
@@ -13,7 +13,7 @@ export const themeSlice = createSlice({
   initialState,
   reducers: {
     themeToggle: (state) => {
-      state.theme = state.theme === "light" ? "dark" : "light";
+      state.theme = state.theme === "" ? "dark" : "";
     },
   },
 });

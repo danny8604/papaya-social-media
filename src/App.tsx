@@ -13,7 +13,8 @@ function App() {
   const isLogin = true;
 
   useEffect(() => {
-    document.body.className = theme;
+    console.log(theme);
+    document.documentElement.className = theme;
   }, [theme]);
 
   const ProtectedRoute = ({ children }: ProtectedRoute) => {

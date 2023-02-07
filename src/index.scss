@@ -1,57 +1,3 @@
-$themes: (
-  light: (
-    textColor: #000,
-    bg: white,
-    logo: darkblue,
-    bgSoft: #f6f3f3,
-    textColorSoft: #555,
-    border: lightgray,
-  ),
-  dark: (
-    textColor: whitesmoke,
-    bg: #222,
-    logo: white,
-    bgSoft: #333,
-    textColorSoft: lightgray,
-    border: #444,
-  ),
-);
-
-@mixin themify($themes) {
-  @each $theme, $map in $themes {
-    .theme-#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), "#{$key}");
-        $theme-map: map-merge(
-          $theme-map,
-          (
-            $key: $value,
-          )
-        ) !global;
-      }
-      @content;
-      $theme-map: null !global;
-    }
-  }
-}
-
-@function themed($key) {
-  @return map-get($theme-map, $key);
-}
-
-@mixin mobile {
-  @media (max-width: 480px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: 960px) {
-    @content;
-  }
-}
-
 *,
 *::before,
 *::after {
@@ -68,12 +14,41 @@ $themes: (
   grid-template-columns: repeat(2, 1fr);
 }
 
-body.light {
-  --primary: white;
-  --bg: black;
+:root {
+  --white: #f8f9fa;
+  --black: #212529;
+  --primary: #212529;
+  --primary-2: #ffd43b;
+  --bg: #f8f9fa;
+  --default-border-radius: 6px;
+  --default-transition: color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+    fill 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-body.dark {
-  --primary: black;
-  --bg: white;
+html.dark {
+  color-scheme: dark;
+}
+
+.dark {
+  --primary: #f8f9fa;
+  --primary-2: #ffd43b;
+  --bg: #212529;
+}
+
+body {
+  background-color: var(--bg);
+  transition: var(--default-transition);
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 960px) {
+    @content;
+  }
 }

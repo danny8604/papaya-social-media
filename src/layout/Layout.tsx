@@ -3,7 +3,7 @@ import "./Layout.scss";
 
 const Layout = () => {
   return (
-    <div>
+    <div className="layout">
       <Navbar />
     </div>
   );

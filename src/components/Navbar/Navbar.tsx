@@ -9,9 +9,9 @@ const Navbar = () => {
   const dispatch = useAppDispatch();
   const { theme } = useAppSelector((state) => state.theme);
   return (
-    <div className="navbar">
+    <div className={`navbar ${theme}`}>
       <HomeOutlinedIcon />
-      {theme === "light" ? (
+      {theme === "" ? (
         <DarkModeOutlinedIcon onClick={() => dispatch(themeToggle())} />
       ) : (
         <WbSunnyOutlinedIcon onClick={() => dispatch(themeToggle())} />

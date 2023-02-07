@@ -17,7 +17,7 @@ const Login = () => {
             </p>
             <span>Don't you have an account?</span>
             <Link to="/register">
-              <Button btnText="Register" />
+              <Button btnText="REGISTER" isLoginBtn />
             </Link>
           </div>
           <div className="right">input here</div>
