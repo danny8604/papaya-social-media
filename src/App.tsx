@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useAppSelector } from "./app/hooks/hooks";
 import Layout from "./layout/Layout";
 import Login from "./pages/login/Login";
 
@@ -7,7 +9,12 @@ interface ProtectedRoute {
 }
 
 function App() {
+  const { theme } = useAppSelector((state) => state.theme);
   const isLogin = true;
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const ProtectedRoute = ({ children }: ProtectedRoute) => {
     if (!isLogin) return <Login />;

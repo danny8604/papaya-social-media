@@ -3,7 +3,7 @@ import "./Layout.scss";
 
 const Layout = () => {
   return (
-    <div className={`theme-${true ? "dark" : "light"}`}>
+    <div>
       <Navbar />
     </div>
   );

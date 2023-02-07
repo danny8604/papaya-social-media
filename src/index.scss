@@ -67,3 +67,13 @@ $themes: (
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+body.light {
+  --primary: white;
+  --bg: black;
+}
+
+body.dark {
+  --primary: black;
+  --bg: white;
+}

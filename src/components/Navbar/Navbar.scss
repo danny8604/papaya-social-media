@@ -1,12 +1,10 @@
 @import "../../index.scss";
 
 .navbar {
-  @include themify($themes) {
-    padding: 1.25rem;
-    color: themed("textColor");
-    background-color: themed("bg");
-    svg {
-      cursor: pointer;
-    }
+  padding: 1.25rem;
+  color: var(--primary);
+  background-color: var(--bg);
+  svg {
+    cursor: pointer;
   }
 }
