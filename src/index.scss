@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -15,29 +17,38 @@
 }
 
 :root {
-  --white: #f8f9fa;
-  --black: #212529;
+  --chakra-color-white: #fff;
+  --chakra-color-black: #000;
+  --chakra-color-gray-50: #f8f9fa;
+  --chakra-color-gray-100: #f1f3f5;
+  --chakra-color-gray-200: #e9ecef;
+  --chakra-color-gray-300: #dee2e6;
+  --chakra-color-gray-400: #ced4da;
+  --chakra-color-gray-500: #adb5bd;
+  --chakra-color-gray-600: #868e96;
+  --chakra-color-gray-700: #495057;
+  --chakra-color-gray-800: #343a40;
   --primary: #212529;
-  --primary-2: #ffd43b;
   --bg: #f8f9fa;
-  --default-border-radius: 6px;
+  --bg-100: #f1f3f5;
   --default-transition: color 0.3s ease-in-out,
     background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
     fill 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-html.dark {
-  color-scheme: dark;
+html {
+  font-family: "Chivo", sans-serif;
 }
 
-.dark {
+html.dark {
+  color-scheme: dark;
   --primary: #f8f9fa;
-  --primary-2: #ffd43b;
   --bg: #212529;
+  --bg-100: #343a40;
 }
 
 body {
-  background-color: var(--bg);
+  background-color: var(--bg-100);
   transition: var(--default-transition);
 }
 

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useAppSelector } from "./app/hooks/hooks";
 import Layout from "./layout/Layout";
+import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 
 interface ProtectedRoute {
@@ -32,8 +33,8 @@ function App() {
       ),
       children: [
         {
-          path: "test",
-          element: <div>te123123st</div>,
+          path: "/",
+          element: <Home />,
         },
       ],
     },

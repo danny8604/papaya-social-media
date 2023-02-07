@@ -1,4 +1,8 @@
 @import "../index.scss";
 
 .layout {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr;
+  position: relative;
 }

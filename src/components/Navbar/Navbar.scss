@@ -1,9 +1,37 @@
 @import "../../index.scss";
 
 .navbar {
-  padding: 1.25rem;
-  border-bottom: 1px solid var(--primary);
+  padding: 1rem 14rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: 1/-1;
+  border-bottom: 1px solid var(--chakra-color-gray-50);
+  color: var(--primary);
+  position: sticky;
+  background-color: var(--bg);
+  top: 0;
+  z-index: 100;
+
   svg {
     cursor: pointer;
+    &:hover {
+      fill: var(--chakra-color-gray-50);
+    }
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .left {
+    a {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+  }
+  .right {
+    display: flex;
+    gap: 1rem;
   }
 }
