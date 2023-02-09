@@ -2,6 +2,7 @@
 
 .login {
   height: 100vh;
+  width: 50%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -9,20 +10,27 @@
 
   .loginContainer {
     min-height: 600px;
-    .left {
-      display: flex;
-      gap: 3rem;
-      flex-direction: column;
+
+    & > div {
       padding: 3rem;
-      height: 100%;
-      color: white;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    }
+    .left {
+      color: var(--chakra-color-white);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
         url("../../assets/image/login-1.jpg");
       background-size: cover;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+      div {
+        letter-spacing: 1px;
+        gap: 2rem;
+      }
     }
     .right {
-      height: 100%;
-      color: white;
+      color: var(--chakra-color-black);
+      background-color: var(--chakra-color-white);
     }
   }
 }

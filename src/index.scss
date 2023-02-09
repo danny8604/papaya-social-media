@@ -11,11 +11,6 @@
   padding: 0;
 }
 
-.grid-columns-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
 :root {
   --chakra-color-white: #fff;
   --chakra-color-black: #000;
@@ -62,4 +57,20 @@ body {
   @media (max-width: 960px) {
     @content;
   }
+}
+
+.flex-column-spaceBetween {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-columns-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
