@@ -4,6 +4,7 @@ import { useAppSelector } from "./app/hooks/hooks";
 import Layout from "./layout/Layout";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
 
 interface ProtectedRoute {
   children: JSX.Element;
@@ -44,7 +45,7 @@ function App() {
     },
     {
       path: "/register",
-      element: <div>register</div>,
+      element: <Register />,
     },
   ]);
 
