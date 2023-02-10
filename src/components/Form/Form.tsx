@@ -84,8 +84,9 @@ const Form = ({ formType }: FormPorps) => {
   const formik = useFormik({
     initialValues: initialValues[formType],
     validationSchema: yupSchema[formType],
-    onSubmit: (values) => {
+    onSubmit: (values, action) => {
       alert(JSON.stringify(values, null, 2));
+      action.resetForm();
     },
   });
 
