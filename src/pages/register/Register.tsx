@@ -13,6 +13,7 @@ const Register = () => {
           <div className="bottom">
             <Form formType="register" />
           </div>
+          <div>test push</div>
         </div>
       </Card>
     </div>
