@@ -1,6 +1,9 @@
 import "./Form.scss";
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { useRef } from "react";
+import Button from "../ui/button/Button";
+import { Link } from "react-router-dom";
 
 // LOGIN
 const loginSchema = yup.object({
@@ -71,7 +74,13 @@ type FormPorps = {
   formType: "login" | "register";
 };
 
+const btnText = {
+  login: "LOGIN",
+  register: "REGISTER",
+};
+
 const Form = ({ formType }: FormPorps) => {
+  const emailFocus = useRef(null);
   const formik = useFormik({
     initialValues: initialValues[formType],
     validationSchema: yupSchema[formType],
@@ -81,24 +90,47 @@ const Form = ({ formType }: FormPorps) => {
   });
 
   return (
-    <form className="form" onSubmit={formik.handleSubmit}>
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        type="email"
-        placeholder="Email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      <label htmlFor="password">password</label>
-      <input
-        id="password"
-        type="password"
-        placeholder="Password"
-        onChange={formik.handleChange}
-        value={formik.values.password}
-      />
-      <button type="submit">rtest</button>
+    <form
+      className="form flex-column-spaceBetween"
+      onSubmit={formik.handleSubmit}
+    >
+      <div className="inputContainer">
+        <input
+          id="email"
+          type="email"
+          ref={emailFocus.current}
+          className={`${formik.errors.email && "error"} ${
+            formik.values.email.length > 0 && "haveValue"
+          }`}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.email}
+        />
+        <label htmlFor="email">Email</label>
+      </div>
+      {formik.touched.email && formik.errors.email ? (
+        <div className="errorMessage">{formik.errors.email}</div>
+      ) : null}
+      <div className="inputContainer">
+        <input
+          id="password"
+          type="password"
+          className={`${formik.errors.password && "error"} ${
+            formik.values.password.length > 0 && "haveValue"
+          }`}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
+        />
+        <label htmlFor="password">password</label>
+      </div>
+      {formik.touched.password && formik.errors.password ? (
+        <div className="errorMessage">{formik.errors.password}</div>
+      ) : null}
+      <div className="btnContainer">
+        <Link to={"/register"}>Don't you have an account?</Link>
+        <Button btnText={btnText[formType]} />
+      </div>
     </form>
   );
 };

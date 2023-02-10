@@ -2,33 +2,29 @@
 
 .login {
   height: 100vh;
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
 
   .loginContainer {
-    min-height: 600px;
-
-    & > div {
-      padding: 3rem;
-    }
-    .left {
+    height: 80%;
+    .top {
+      letter-spacing: 1px;
       color: var(--chakra-color-white);
-      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url("../../assets/image/login-1.jpg");
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+        url("../../assets/image/login-4.jpg");
       background-size: cover;
+      padding: 2rem;
+      padding-bottom: 8rem;
 
       h1 {
-        font-size: 2.5rem;
-      }
-      div {
-        letter-spacing: 1px;
-        gap: 2rem;
+        font-size: 2rem;
+        letter-spacing: 1.8px;
       }
     }
-    .right {
+    .bottom {
+      padding: 3rem;
       color: var(--chakra-color-black);
       background-color: var(--chakra-color-white);
     }
