@@ -2,12 +2,13 @@ import "./Button.scss";
 
 type ButtonProps = {
   btnText: string;
-  isLoginBtn?: boolean;
 };
 
-const Button = ({ btnText, isLoginBtn }: ButtonProps) => {
+const Button = ({ btnText }: ButtonProps) => {
   return (
-    <button className={`button ${isLoginBtn && "loginBtn"}`}>{btnText}</button>
+    <button className={`button ${btnText === "LOGIN" ? "loginBtn" : ""} `}>
+      {btnText}
+    </button>
   );
 };
 

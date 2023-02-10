@@ -14,6 +14,8 @@
 :root {
   --chakra-color-white: #fff;
   --chakra-color-black: #000;
+  --chakra-color-red: #c92a2a;
+
   --chakra-color-gray-50: #f8f9fa;
   --chakra-color-gray-100: #f1f3f5;
   --chakra-color-gray-200: #e9ecef;
@@ -73,4 +75,9 @@ body {
 .grid-columns-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-columns-1 {
+  display: grid;
+  grid-template-rows: auto 1fr;
 }

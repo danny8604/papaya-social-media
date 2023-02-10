@@ -12,12 +12,12 @@
 }
 
 .button.loginBtn {
-  background-color: var(--chakra-color-white);
-  color: var(--chakra-color-black);
-  border: 1.2px solid var(--chakra-color-white);
+  background-color: var(--chakra-color-gray-800);
+  color: var(--chakra-color-white);
+  border: 1.2px solid var(--chakra-color-gray-800);
 
   &:hover {
-    color: var(--chakra-color-white);
-    background-color: var(--chakra-color-black);
+    color: var(--chakra-color-gray-800);
+    background-color: var(--chakra-color-white);
   }
 }
