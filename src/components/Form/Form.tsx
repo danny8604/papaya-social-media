@@ -1,16 +1,9 @@
 import "./Form.scss";
 import * as yup from "yup";
-import {
-  ErrorMessage,
-  FieldHookConfig,
-  Formik,
-  FormikProps,
-  useField,
-  useFormik,
-} from "formik";
+import { Formik } from "formik";
 import Button from "../ui/button/Button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import TextInput from "./TextInput";
 
 const loginSchema = yup.object({
   email: yup.string().email("invalid email").required("required"),
@@ -27,8 +20,6 @@ const initialValuesLogin: Login = {
   password: "",
 };
 
-// REGISTER
-
 const registerSchema = yup.object({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
@@ -38,7 +29,8 @@ const registerSchema = yup.object({
     .string()
     .min(8)
     .max(20)
-    .oneOf([yup.ref("password")], "password must match"),
+    .oneOf([yup.ref("password")], "password must match")
+    .required("required"),
   location: yup.string(),
   occupation: yup.string(),
   picture: yup.string(),
@@ -80,82 +72,103 @@ const btnText = {
   register: "REGISTER",
 };
 
+const linkText = {
+  login: "Don't you have an account?",
+  register: "Login here?",
+};
+
+const linkTo = {
+  login: "/register",
+  register: "/login",
+};
+
 type FormProps = {
   formType: "login" | "register";
 };
 
+// type TextInputState = {
+//   label: string;
+// };
+
 const Form = ({ formType }: FormProps) => {
-  console.log(formType, "formType");
-
-  const TextInput = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-      <>
-        <input {...field} {...props} />
-        <label htmlFor={props.id || props.name}>{label}</label>
-        {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
-        ) : null}
-      </>
-    );
-  };
-
   return (
     <Formik
       initialValues={initialValues[formType]}
       validationSchema={yupSchema[formType]}
-      onSubmit={(values) => {
+      onSubmit={(values, action) => {
         alert(JSON.stringify(values, null, 2));
-        console.log("🐧🐧");
+        action.resetForm();
       }}
     >
       {(formik) => (
-        <form onSubmit={formik.handleSubmit}>
+        <form
+          onSubmit={formik.handleSubmit}
+          className="form grid-columns-1 gap-small"
+        >
           {formType === "login" && (
             <>
-              <TextInput
-                label="email"
-                name="email"
-                type="email"
-                placeholder="email"
-              />
+              <TextInput label="email" name="email" type="email" id="email" />
               <TextInput
                 label="password"
                 name="password"
                 type="password"
-                placeholder="password"
+                id="password"
               />
             </>
           )}
+
           {formType === "register" && (
             <>
+              <div className="grid-columns-2 gap-small">
+                <TextInput
+                  label="First Name"
+                  name="firstName"
+                  type="text"
+                  id="firstName"
+                />
+                <TextInput
+                  label="Last Name"
+                  name="lastName"
+                  type="text"
+                  id="lastName"
+                />
+              </div>
+
+              <TextInput label="Email" name="email" type="email" id="email" />
               <TextInput
-                label="firstName"
-                name="firstName"
-                type="text"
-                placeholder="firstName"
-              />
-              <TextInput
-                label="lastName"
-                name="lastName"
-                type="text"
-                placeholder="lastName"
-              />
-              <TextInput
-                label="email"
-                name="email"
-                type="email"
-                placeholder="email"
-              />
-              <TextInput
-                label="password"
+                label="Password"
                 name="password"
                 type="password"
-                placeholder="password"
+                id="password"
               />
+              <TextInput
+                label="Confirm Password"
+                name="confirmPassword"
+                type="password"
+                id="confirmPassword"
+              />
+
+              <div className="grid-columns-2 gap-small">
+                <TextInput
+                  label="Location"
+                  name="location"
+                  type="text"
+                  id="location"
+                />{" "}
+                <TextInput
+                  label="Occupation"
+                  name="occupation"
+                  type="text"
+                  id="occupation"
+                />
+              </div>
             </>
           )}
-          <button>submit</button>
+
+          <div className="btnContainer">
+            <Link to={linkTo[formType]}>{linkText[formType]}</Link>
+            <Button btnText={btnText[formType]} />
+          </div>
         </form>
       )}
     </Formik>
