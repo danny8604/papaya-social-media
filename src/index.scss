@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700&display=swap");
 
 *,
 *::before,
@@ -80,4 +80,8 @@ body {
 .grid-columns-1 {
   display: grid;
   grid-template-rows: auto 1fr;
+}
+
+.gap-small {
+  gap: 1rem;
 }

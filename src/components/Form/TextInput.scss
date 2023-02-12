@@ -1,0 +1,41 @@
+@import "../../index.scss";
+
+.inputContainer {
+  position: relative;
+  label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 0.75rem;
+    transition: all 0.2s;
+  }
+  input {
+    width: 100%;
+    border: none;
+    padding: 0.75rem;
+    padding-top: 2.25rem;
+    border-radius: 5px;
+    border: 1px solid var(--chakra-color-gray-500);
+    &:focus + label {
+      font-size: 0.825rem;
+      top: 30%;
+    }
+
+    &.haveValue + label {
+      font-size: 0.825rem;
+      top: 30%;
+    }
+  }
+  .error {
+    border: 1px solid var(--chakra-color-red);
+  }
+}
+
+.errorMessage {
+  padding: 0.5rem;
+  letter-spacing: 0.5px;
+  color: var(--chakra-color-red);
+}
