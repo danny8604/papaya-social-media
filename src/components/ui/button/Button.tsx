@@ -6,7 +6,11 @@ type ButtonProps = {
 
 const Button = ({ btnText }: ButtonProps) => {
   return (
-    <button className={`button ${btnText === "LOGIN" ? "loginBtn" : ""} `}>
+    <button
+      className={`button ${btnText === "LOGIN" ? "loginBtn" : ""} ${
+        btnText === "REGISTER" ? "loginBtn" : ""
+      }`}
+    >
       {btnText}
     </button>
   );

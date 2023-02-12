@@ -1,19 +1,19 @@
-@import "../../index.scss";
+@import "../../../index.scss";
 
-.login {
+.formWrapper {
   height: 100vh;
   width: 30%;
   margin: 0 auto;
   display: flex;
   align-items: center;
 
-  .loginContainer {
+  .formContainer {
     height: 80%;
     .top {
       letter-spacing: 1px;
       color: var(--chakra-color-white);
       background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
-        url("../../assets/image/login-4.jpg");
+        url("../../../assets/image/login-4.jpg");
       background-size: cover;
       padding: 2rem;
       padding-bottom: 8rem;
