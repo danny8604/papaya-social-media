@@ -1,9 +1,10 @@
 import "./Form.scss";
 import * as yup from "yup";
-import { Formik } from "formik";
+import { Formik, FormikHelpers } from "formik";
 import Button from "../ui/button/Button";
 import { Link } from "react-router-dom";
 import TextInput from "./TextInput";
+import { useDropzone } from "react-dropzone";
 
 const loginSchema = yup.object({
   email: yup.string().email("invalid email").required("required"),
@@ -82,42 +83,152 @@ const linkTo = {
   register: "/login",
 };
 
+const TextInputs = {
+  login: [
+    {
+      input: {
+        name: "email",
+        type: "email",
+        id: "email",
+        label: "Email",
+      },
+    },
+    {
+      input: {
+        name: "password",
+        type: "password",
+        id: "password",
+        label: "Password",
+      },
+    },
+  ],
+  register: [
+    {
+      input: {
+        name: "firstName",
+        type: "text",
+        id: "firstName",
+        label: "First Name",
+      },
+    },
+    {
+      input: {
+        name: "lastName",
+        type: "text",
+        id: "lastName",
+        label: "Last Name",
+      },
+    },
+    {
+      input: {
+        name: "email",
+        type: "email",
+        id: "email",
+        label: "Email",
+      },
+    },
+    {
+      input: {
+        name: "password",
+        type: "password",
+        id: "password",
+        label: "Password",
+      },
+    },
+    {
+      input: {
+        name: "confirmPassword",
+        type: "password",
+        id: "confirmPassword",
+        label: "Confirm Password",
+      },
+    },
+    {
+      input: {
+        name: "location",
+        type: "text",
+        id: "location",
+        label: "Location",
+      },
+    },
+    {
+      input: {
+        name: "occupation",
+        type: "text",
+        id: "occupation",
+        label: "Occupation",
+      },
+    },
+  ],
+};
+
 type FormProps = {
   formType: "login" | "register";
 };
 
-// type TextInputState = {
-//   label: string;
-// };
-
 const Form = ({ formType }: FormProps) => {
+  const {
+    acceptedFiles,
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    isDragAccept,
+    isDragReject,
+  } = useDropzone({
+    accept: {
+      "image/*": [".jpeg", ".png", ".jpg"],
+    },
+  });
+  const isLoginForm = formType === "login";
+  const isRegisterForm = formType === "register";
+
+  const register = async (
+    values: Login | Register | any,
+    action: FormikHelpers<Login | Register>
+  ) => {
+    const formData = new FormData();
+    for (let value in values) {
+      formData.append(value, values[value]);
+    }
+    formData.append("picturePath", acceptedFiles[0].name);
+
+    action.resetForm();
+  };
+
+  const login = async (
+    values: Login | Register,
+    action: FormikHelpers<Login | Register>
+  ) => {
+    alert("login!!");
+    action.resetForm();
+  };
+
+  const FormSubmithandler = async (
+    values: Login | Register,
+    action: FormikHelpers<Login | Register>
+  ) => {
+    if (isLoginForm) await login(values, action);
+    if (isRegisterForm) await register(values, action);
+  };
   return (
     <Formik
       initialValues={initialValues[formType]}
       validationSchema={yupSchema[formType]}
-      onSubmit={(values, action) => {
-        alert(JSON.stringify(values, null, 2));
-        action.resetForm();
-      }}
+      onSubmit={FormSubmithandler}
     >
       {(formik) => (
         <form
           onSubmit={formik.handleSubmit}
           className="form grid-columns-1 gap-small"
         >
-          {formType === "login" && (
+          {isLoginForm && (
             <>
-              <TextInput label="email" name="email" type="email" id="email" />
-              <TextInput
-                label="password"
-                name="password"
-                type="password"
-                id="password"
-              />
+              {TextInputs.login.map(({ input }) => (
+                <TextInput {...input} key={input.id} />
+              ))}
             </>
           )}
-
-          {formType === "register" && (
+          {isRegisterForm && (
             <>
               <div className="grid-columns-2 gap-small">
                 <TextInput
@@ -161,6 +272,15 @@ const Form = ({ formType }: FormProps) => {
                   type="text"
                   id="occupation"
                 />
+              </div>
+
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                {isDragAccept && <p>All files will be accepted</p>}
+                {isDragReject && <p>Some files will be rejected</p>}
+                {!isDragActive && !isDragAccept && (
+                  <p>Drop some files here ...</p>
+                )}
               </div>
             </>
           )}
