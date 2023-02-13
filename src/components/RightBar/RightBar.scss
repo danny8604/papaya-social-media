@@ -1,5 +1,27 @@
 @import "../../index.scss";
 
 .rightBar {
+  padding: 2.5rem;
   width: 100%;
+  top: 60px;
+  height: calc(100vh - 60px);
+
+  .contentWrapper {
+    h4 {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--chakra-color-gray-400);
+    }
+    &:not(&:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    & .content {
+      padding: 1.5rem;
+      max-width: 350px;
+      img {
+        padding-top: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
 }

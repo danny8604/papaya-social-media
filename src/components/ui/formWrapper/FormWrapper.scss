@@ -9,6 +9,7 @@
 
   .formContainer {
     height: 80%;
+
     .top {
       letter-spacing: 1px;
       color: var(--chakra-color-white);
@@ -16,15 +17,16 @@
         url("../../../assets/image/login-4.jpg");
       background-size: cover;
       padding: 2rem;
-      padding-bottom: 8rem;
+      padding-bottom: 6rem;
 
       h1 {
         font-size: 2rem;
         letter-spacing: 1.8px;
       }
     }
+
     .bottom {
-      padding: 3rem;
+      padding: 1.75rem 2.5rem;
       color: var(--chakra-color-black);
       background-color: var(--chakra-color-white);
     }

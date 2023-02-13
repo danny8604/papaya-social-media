@@ -17,7 +17,6 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="right">
-        {" "}
         <HomeOutlinedIcon />
         {theme === "" ? (
           <DarkModeOutlinedIcon onClick={() => dispatch(themeToggle())} />

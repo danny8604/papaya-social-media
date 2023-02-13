@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: space-between;
   grid-column: 1/-1;
-  border-bottom: 1px solid var(--chakra-color-gray-50);
-  color: var(--primary);
+  border-bottom: 1px solid var(--chakra-color-gray-300);
+  color: var(--color-primary);
   position: sticky;
-  background-color: var(--bg);
+  background-color: var(--color-bg);
   top: 0;
   z-index: 100;
 

@@ -10,18 +10,21 @@ const TextInput = ({
   ...props
 }: TextInputState & FieldHookConfig<string>) => {
   const [field, meta] = useField(props);
+  const isShowInputError = meta.touched && meta.error;
   return (
     <div>
       <div className="inputContainer">
         <input
           {...field}
-          className={`${meta.touched && meta.error ? "error" : ""} ${
+          type={props.type}
+          id={props.id}
+          className={`${isShowInputError ? "error" : ""} ${
             meta.value.length > 0 ? "haveValue" : ""
           }`}
         />
         <label htmlFor={props.name}>{label}</label>
       </div>
-      {meta.touched && meta.error ? (
+      {isShowInputError ? (
         <div className="errorMessage"> {meta.error}</div>
       ) : null}
     </div>
