@@ -1,0 +1,71 @@
+@import "../../../index.scss";
+
+.post {
+  letter-spacing: 0.7px;
+
+  button {
+    font-family: inherit;
+    border: none;
+    background-color: var(--chakra-color-gray-100);
+    cursor: pointer;
+  }
+
+  .postUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    .left {
+      gap: 1rem;
+      display: flex;
+      align-items: center;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+      }
+    }
+  }
+
+  .postContent {
+    word-break: break-all;
+    line-height: 1.5rem;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .postImage {
+    img {
+      width: 100%;
+    }
+  }
+
+  .postInfor {
+    padding: 1.5rem;
+
+    border-bottom: 1px solid var(--chakra-color-gray-300);
+    .left {
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      svg {
+        fill: var(--chakra-color-red-800);
+      }
+    }
+    .right {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  .postBtn {
+    padding: 1.5rem;
+    button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+    }
+  }
+}

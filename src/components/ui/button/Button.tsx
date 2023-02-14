@@ -2,14 +2,16 @@ import "./Button.scss";
 
 type ButtonProps = {
   btnText: string;
+  blackBtn?: boolean;
+  small?: boolean;
+  clickAction?: () => void;
 };
 
-const Button = ({ btnText }: ButtonProps) => {
+const Button = ({ btnText, blackBtn, small, clickAction }: ButtonProps) => {
   return (
     <button
-      className={`button ${btnText === "LOGIN" ? "loginBtn" : ""} ${
-        btnText === "REGISTER" ? "loginBtn" : ""
-      }`}
+      onClick={() => clickAction && clickAction()}
+      className={`button ${blackBtn ? "blackBtn" : ""} ${small ? "small" : ""}`}
     >
       {btnText}
     </button>

@@ -14,7 +14,11 @@
 :root {
   --chakra-color-white: #fff;
   --chakra-color-black: #000;
-  --chakra-color-red: #c92a2a;
+  --chakra-color-red-400: #ff6b6b;
+  --chakra-color-red-500: #fa5252;
+  --chakra-color-red-600: #f03e3e;
+  --chakra-color-red-700: #e03131;
+  --chakra-color-red-800: #c92a2a;
   --chakra-color-gray-50: #f8f9fa;
   --chakra-color-gray-100: #f1f3f5;
   --chakra-color-gray-200: #e9ecef;
@@ -69,6 +73,16 @@ body {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.flex-spaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-spaceAround {
+  display: flex;
+  justify-content: space-around;
 }
 
 .grid-columns-2 {

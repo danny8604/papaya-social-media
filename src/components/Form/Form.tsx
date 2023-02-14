@@ -2,7 +2,7 @@ import "./Form.scss";
 import * as yup from "yup";
 import { Formik, FormikHelpers } from "formik";
 import Button from "../ui/button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextInput from "./TextInput";
 import { useDropzone } from "react-dropzone";
 
@@ -167,6 +167,7 @@ type FormProps = {
 };
 
 const Form = ({ formType }: FormProps) => {
+  const navigate = useNavigate();
   const {
     acceptedFiles,
     getRootProps,
@@ -200,6 +201,7 @@ const Form = ({ formType }: FormProps) => {
     action: FormikHelpers<Login | Register>
   ) => {
     alert("login!!");
+    navigate("/");
     action.resetForm();
   };
 
@@ -287,7 +289,7 @@ const Form = ({ formType }: FormProps) => {
 
           <div className="btnContainer">
             <Link to={linkTo[formType]}>{linkText[formType]}</Link>
-            <Button btnText={btnText[formType]} />
+            <Button btnText={btnText[formType]} blackBtn />
           </div>
         </form>
       )}
