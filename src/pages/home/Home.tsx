@@ -1,78 +1,11 @@
-import Card from "@mui/material/Card";
+import Stories from "../../components/Stories/Stories";
+
 import "./Home.scss";
 
 const Home = () => {
   return (
     <div className="home">
-      <Card>
-        <div>HOME</div>
-      </Card>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
-      <div>home</div>
+      <Stories />
     </div>
   );
 };
