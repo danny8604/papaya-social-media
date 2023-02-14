@@ -1,0 +1,13 @@
+@import "../../index.scss";
+
+.createPost {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  .avatar {
+    border-radius: 100px;
+    width: 55px;
+    height: 55px;
+  }
+}
