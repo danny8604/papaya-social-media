@@ -1,7 +1,7 @@
-import Card from "../ui/card/Card";
-import Story from "../ui/story/Story";
-import testImage from "../../assets/image/login-2.jpg";
-import testAvatar from "../../assets/avatars/avatar-1.jpg";
+import Card from "../card/Card";
+import Story from "../../story/Story";
+import testImage from "../../../assets/image/login-2.jpg";
+import testAvatar from "../../../assets/avatars/avatar-1.jpg";
 import "./Stories.scss";
 
 const Stories = () => {

@@ -1,0 +1,16 @@
+@import "../../../index.scss";
+
+.contentWrapper {
+  background-color: var(--color-bg);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+
+  h4 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--chakra-color-gray-400);
+  }
+
+  & .content {
+    padding: 1.5rem;
+  }
+}

@@ -1,4 +1,4 @@
-import Form from "../../Form/Form";
+import Form from "../../form/Form";
 import Card from "../card/Card";
 import "./FormWrapper.scss";
 

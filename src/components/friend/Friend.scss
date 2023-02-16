@@ -1,0 +1,19 @@
+@import "../../index.scss";
+
+.friend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+  }
+
+  &:hover {
+    background-color: var(--chakra-color-gray-200);
+  }
+}
