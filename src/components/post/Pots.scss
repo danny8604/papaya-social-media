@@ -1,12 +1,13 @@
-@import "../../../index.scss";
+@import "../../index.scss";
 
 .post {
   letter-spacing: 0.7px;
+  background-color: var(--color-bg);
 
   button {
     font-family: inherit;
     border: none;
-    background-color: var(--chakra-color-gray-100);
+    background-color: var(--color-bg);
     cursor: pointer;
   }
 
@@ -15,6 +16,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
+
     .left {
       gap: 1rem;
       display: flex;

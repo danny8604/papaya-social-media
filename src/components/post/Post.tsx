@@ -1,4 +1,4 @@
-import Card from "../card/Card";
+import Card from "../ui/card/Card";
 import "./Pots.scss";
 import ClearIcon from "@mui/icons-material/Clear";
 import FavoriteIcon from "@mui/icons-material/Favorite";
