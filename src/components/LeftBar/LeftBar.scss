@@ -6,14 +6,36 @@
   height: calc(100vh - 60px);
   background-color: var(--color-bg);
   border-right: 1px solid var(--chakra-color-gray-300);
+
+  .linkContainer {
+    border-bottom: 1px solid var(--color-bg-200);
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
   .iconLink {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 4rem;
+    padding: 1.25rem 2rem;
     cursor: pointer;
     &:hover {
       background-color: var(--chakra-color-gray-400);
+    }
+  }
+  .avatar {
+    padding: 1.25rem 1.75rem;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 100px;
+    }
+  }
+  .shortcuts {
+    h4 {
+      padding: 1.25rem 2rem;
     }
   }
 }
